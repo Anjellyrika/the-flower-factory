@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bb54ljhivqun4"]
 
-[node name="Rock" type="Node2D" unique_id=743667323]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y00b8"]
+size = Vector2(64, 64)
+
+[node name="Rock" type="Area2D" unique_id=1755523138]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1558804273]
+shape = SubResource("RectangleShape2D_y00b8")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1202982367]
 offset_left = -32.0
