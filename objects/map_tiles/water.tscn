@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dkcyqplmkm1tl"]
 
-[node name="Water" type="ColorRect" unique_id=143580654]
+[ext_resource type="Script" path="res://objects/map_tiles/water.gd" id="1_water"]
+
+[node name="Water" type="Node2D" unique_id=143580654]
+script = ExtResource("1_water")
+
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
