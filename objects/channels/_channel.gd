@@ -24,8 +24,16 @@ func _process(delta: float) -> void:
 		flow_ready.emit()
 
 
+func get_input_direction() -> Vector2i:
+	return Vector2i(Vector2(input_direction).rotated(rotation).round())
+
+
+func get_output_direction() -> Vector2i:
+	return Vector2i(Vector2(output_direction).rotated(rotation).round())
+
+
 func get_targets() -> Array[Vector2i]:
-	return [cell + output_direction] # Default target is adjacent tile
+	return [cell + get_output_direction()] # Default target is adjacent tile
 
 
 func can_supply(target: Channel) -> bool:
@@ -35,7 +43,7 @@ func can_supply(target: Channel) -> bool:
 
 
 func accepts_water(water_direction: Vector2i) -> bool:
-	return water_direction == -input_direction
+	return water_direction == -get_input_direction()
 
 
 func set_watered(value: bool) -> void:
