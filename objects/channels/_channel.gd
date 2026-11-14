@@ -14,6 +14,10 @@ var can_flow := false
 var _time_left := 0.0
 
 
+func interact() -> void:
+	pass
+
+
 func _process(delta: float) -> void:
 	if (not watered) or can_flow:
 		return

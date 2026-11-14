@@ -5,6 +5,7 @@
 
 [node name="Wheelbarrow" type="Node2D" unique_id=924564302]
 script = ExtResource("1_dr7mu")
+flow_delay = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1969568604]
 modulate = Color(1, 1, 1, 0.74509805)
