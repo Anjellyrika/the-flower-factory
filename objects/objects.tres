@@ -1,0 +1,37 @@
+[gd_resource type="TileSet" format=3 uid="uid://cha3wu5aejg2k"]
+
+[ext_resource type="PackedScene" uid="uid://dmjpked58upu3" path="res://objects/channels/branch.tscn" id="1_k4ace"]
+[ext_resource type="PackedScene" uid="uid://bo4k4bs3rtuvb" path="res://objects/channels/halfpipe.tscn" id="2_2vsu8"]
+[ext_resource type="PackedScene" uid="uid://dhyeiwu0a8qd3" path="res://objects/channels/hose.tscn" id="3_2suqf"]
+[ext_resource type="PackedScene" uid="uid://bl2o0sdxthjaw" path="res://objects/channels/sprinkler.tscn" id="4_unehg"]
+[ext_resource type="PackedScene" uid="uid://8g37kstt60ek" path="res://objects/channels/wheelbarrow.tscn" id="5_aakhw"]
+[ext_resource type="PackedScene" uid="uid://dkcyqplmkm1tl" path="res://objects/map_tiles/water.tscn" id="6_ay0k8"]
+[ext_resource type="PackedScene" uid="uid://bb54ljhivqun4" path="res://objects/obstacles/rock.tscn" id="7_2vsu8"]
+[ext_resource type="PackedScene" uid="uid://bujs6sy76cj3a" path="res://objects/map_tiles/flower.tscn" id="8_2suqf"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hyp3v"]
+resource_name = "channels"
+scenes/1/scene = ExtResource("1_k4ace")
+scenes/2/scene = ExtResource("2_2vsu8")
+scenes/3/scene = ExtResource("3_2suqf")
+scenes/4/scene = ExtResource("4_unehg")
+scenes/5/scene = ExtResource("5_aakhw")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_by8bd"]
+resource_name = "water source"
+scenes/1/scene = ExtResource("6_ay0k8")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_2suqf"]
+resource_name = "obstacles"
+scenes/1/scene = ExtResource("7_2vsu8")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_unehg"]
+resource_name = "flower"
+scenes/1/scene = ExtResource("8_2suqf")
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetScenesCollectionSource_hyp3v")
+sources/1 = SubResource("TileSetScenesCollectionSource_by8bd")
+sources/2 = SubResource("TileSetScenesCollectionSource_2suqf")
+sources/3 = SubResource("TileSetScenesCollectionSource_unehg")

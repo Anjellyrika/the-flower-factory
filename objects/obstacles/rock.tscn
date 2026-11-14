@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://bb54ljhivqun4"]
 
 [node name="Rock" type="Node2D" unique_id=743667323]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1202982367]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(0.3372549, 0.3372549, 0.3372549, 1)

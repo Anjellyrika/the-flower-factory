@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://dmjpked58upu3"]
 
+[ext_resource type="Script" uid="uid://ce6hntrkhcmfc" path="res://objects/channels/branch.gd" id="1_115bo"]
+[ext_resource type="Texture2D" uid="uid://d1sf8rvjrxwo" path="res://assets/branch.png" id="2_4pcsg"]
+
 [node name="Branch" type="Node2D" unique_id=1508786701]
+script = ExtResource("1_115bo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=930623251]
+modulate = Color(1, 1, 1, 0.74509805)
+texture = ExtResource("2_4pcsg")

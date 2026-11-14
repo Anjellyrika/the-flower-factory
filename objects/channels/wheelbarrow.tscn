@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://8g37kstt60ek"]
 
+[ext_resource type="Script" uid="uid://y2fv7qygt5cb" path="res://objects/channels/wheelbarrow.gd" id="1_dr7mu"]
+[ext_resource type="Texture2D" uid="uid://daxwccyvvmrwu" path="res://assets/wheelbarrow.png" id="2_lw6y4"]
+
 [node name="Wheelbarrow" type="Node2D" unique_id=924564302]
+script = ExtResource("1_dr7mu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1969568604]
+modulate = Color(1, 1, 1, 0.74509805)
+texture = ExtResource("2_lw6y4")

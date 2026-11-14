@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://bl2o0sdxthjaw"]
 
+[ext_resource type="Script" uid="uid://dic75yccg1fwy" path="res://objects/channels/sprinkler.gd" id="1_iqvmc"]
+[ext_resource type="Texture2D" uid="uid://din3uegf1xy7" path="res://assets/sprinkler.png" id="2_trhti"]
+
 [node name="Sprinkler" type="Node2D" unique_id=18581707]
+script = ExtResource("1_iqvmc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1680301425]
+modulate = Color(1, 1, 1, 0.74509805)
+texture = ExtResource("2_trhti")
