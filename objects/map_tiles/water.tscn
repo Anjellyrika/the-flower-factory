@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dkcyqplmkm1tl"]
+
+[node name="Water" type="ColorRect" unique_id=143580654]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(0.1764706, 0.7058824, 1, 1)
