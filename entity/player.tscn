@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://lidx773oq75g"]
+
+[ext_resource type="Script" uid="uid://biurqpwjpjf3y" path="res://entity/player.gd" id="1_hsefk"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_xlvtu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y00b8"]
+size = Vector2(64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_player"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xlvtu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xlvtu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=574021666]
+motion_mode = 1
+script = ExtResource("1_hsefk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1390179510]
+shape = SubResource("RectangleShape2D_y00b8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1983681515]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_player")
+animation = &"idle"
