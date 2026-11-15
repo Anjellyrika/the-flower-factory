@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dfp8urdyj4ey0"]
 
-[node name="Grass" type="ColorRect" unique_id=911457087]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(0.37254903, 1, 0.3529412, 1)
+[ext_resource type="Texture2D" uid="uid://bta0t5qdjdru2" path="res://assets/art/grass-tile.png" id="1_6v1q4"]
+
+[node name="Grass" type="Node2D" unique_id=842004773]
+
+[node name="GrassSprite" type="Sprite2D" parent="." unique_id=175206971]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_6v1q4")
