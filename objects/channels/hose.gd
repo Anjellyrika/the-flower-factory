@@ -5,6 +5,12 @@ extends Channel
 
 @export_range(2, 4, 1) var distance := 2
 
+@onready var pressure_label: Label = $PressureLabel
+
+
+func _ready() -> void:
+	pressure_label.text = str(distance - 1)
+
 
 func interact() -> void:
 	adjust_pressure()
@@ -20,4 +26,5 @@ func can_supply(_target: Channel) -> bool:
 
 func adjust_pressure() -> void:
 	distance = 2 if distance == 4 else distance + 1
+	pressure_label.text = str(distance - 1)
 	changed.emit()

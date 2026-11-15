@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtpsn"]
 size = Vector2(64, 64)
 
+[sub_resource type="LabelSettings" id="LabelSettings_pi4ry"]
+font_color = Color(0, 0, 0, 1)
+
 [node name="Hose" type="Node2D" unique_id=939167185]
 script = ExtResource("1_wwfbs")
 
@@ -20,3 +23,11 @@ script = ExtResource("3_interaction")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1002039963]
 shape = SubResource("RectangleShape2D_mtpsn")
+
+[node name="PressureLabel" type="Label" parent="." unique_id=1356914213]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 33.0
+text = "null"
+label_settings = SubResource("LabelSettings_pi4ry")
