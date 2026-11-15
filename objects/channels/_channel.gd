@@ -56,4 +56,7 @@ func set_watered(value: bool) -> void:
 	watered = value
 	can_flow = false # Newly watered cells must wait for the flow delay before outputting watr
 	_time_left = flow_delay
-	modulate = Color(0.6, 0.8, 1.0) if watered else Color.WHITE
+	var water_color := Color(0.6, 0.8, 1.0) if watered else Color.WHITE
+	for child in get_children():
+		if child is CanvasItem:
+			child.self_modulate = water_color
