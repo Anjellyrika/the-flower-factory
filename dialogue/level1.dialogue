@@ -1,0 +1,87 @@
+~ start
+Diwa: I can move around with the Arrow Keys (←↑↓→), and interact with objects with the E key.
+
+Diwa: I think I can interact with lots of things, but for now…
+
+Diwa: Maybe I should start by interacting with those pipes over there?
+
+=> END
+
+~ interact_pipe
+#(When picking up a pipe)
+
+Diwa: Woof, that’s a bit heavy… 
+
+Diwa: I believe water flows through these pipes though.
+
+Diwa: If I could get the water to flow in from the right direction. Could it bring the water to the flower?
+
+Diwa: Please, hang in there, flower…
+
+=> END
+
+~ interact_hose
+#(When interacting with a hose)
+
+Diwa: Hmm… I can turn this handle, but I’m not sure what it does.
+
+Diwa: I did see Gramps send water to these things though. Maybe it does something to the water flow?
+
+=> END
+
+~ interact_sprinkler
+#(When interacting with a sprinkler)
+
+Diwa: Oh, I remember playing with these little things! 
+
+Diwa: I think they spray water all over the place. How fun!
+
+Diwa: Though I think I need to supply it with water first.
+
+=> END
+
+~ interact_wheelbarrow
+#(When interacting with a wheelbarrow)
+
+Diwa: Woof, this is really heavy… I can push it around to rotate it though, thankfully.
+
+Diwa: I get the feeling this can hold quite a bit of water.
+
+Diwa: If I point it in the right direction, I think this will be useful.
+
+=> END
+
+~ interact_rock
+#(When interact with a rock)
+
+Diwa: Arf… It won’t budge!
+
+Diwa: I’ll have to find a way around this rock, somehow.
+
+=> END
+
+~ level1_complete
+#(After dawg revitalizes the flower)
+
+Diwa: It… It worked! Phew…
+
+Diwa: I’m glad I was able to save you, pink flower.
+
+Diwa: But… The rest of the garden needs my help, doesn’t it?
+
+Diwa: …
+
+Diwa: I’ll come back soon, flower. I need to go help the other flowers too.
+
+Diwa: Just like Gramps did… I’ll find a way to help everyone. Little by little.
+=> END
+
+~ bonus_dialogue
+Diwa: Hmm? 
+
+Diwa: …
+
+Diwa: Huh. I didn’t think that would work but, it did. 
+
+Diwa: Well, back to watering the flowers!
+=> END
