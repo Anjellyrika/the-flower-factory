@@ -1,5 +1,10 @@
 extends Control
 
+@onready var music_player: AudioStreamPlayer2D = $MusicPlayer
+
+func _ready() -> void:
+	music_player.play()
+
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

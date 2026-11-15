@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cohkbxhcxa816" path="res://menus/main-menu/main_menu.gd" id="1_xvipi"]
 [ext_resource type="FontFile" uid="uid://d1qyba6gyum8v" path="res://assets/fonts/Signika-Bold.ttf" id="2_esdj6"]
 [ext_resource type="FontFile" uid="uid://cgaho5dnn17cy" path="res://assets/fonts/Quicksand-VariableFont_wght.ttf" id="3_oaq0h"]
+[ext_resource type="AudioStream" uid="uid://c5ap8c2so8h24" path="res://assets/sounds/bells.wav" id="4_esdj6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y00b8"]
 line_spacing = -32.0
@@ -49,6 +50,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_oaq0h")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=118475464]
+stream = ExtResource("4_esdj6")
+volume_db = -5.0
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
