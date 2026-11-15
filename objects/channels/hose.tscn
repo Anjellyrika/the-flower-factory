@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bpi3owfmps8ts" path="res://objects/channels/hose.gd" id="1_wwfbs"]
 [ext_resource type="Texture2D" uid="uid://xcw0jxh0vjbf" path="res://assets/hose.png" id="2_pi4ry"]
+[ext_resource type="Script" uid="uid://dq1pxoutbtiw0" path="res://objects/interaction_area.gd" id="3_interaction"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtpsn"]
+size = Vector2(64, 64)
 
 [node name="Hose" type="Node2D" unique_id=939167185]
 script = ExtResource("1_wwfbs")
@@ -9,3 +13,10 @@ script = ExtResource("1_wwfbs")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=370143884]
 modulate = Color(1, 1, 1, 0.74509805)
 texture = ExtResource("2_pi4ry")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=181662296]
+collision_layer = 0
+script = ExtResource("3_interaction")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1002039963]
+shape = SubResource("RectangleShape2D_mtpsn")

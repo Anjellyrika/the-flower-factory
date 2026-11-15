@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bl2o0sdxthjaw" path="res://objects/channels/sprinkler.tscn" id="4_e6u7d"]
 [ext_resource type="Script" uid="uid://elb433e5t2vs" path="res://levels/water_system.gd" id="4_water_system"]
 [ext_resource type="PackedScene" uid="uid://dhyeiwu0a8qd3" path="res://objects/channels/hose.tscn" id="5_mxc8w"]
+[ext_resource type="PackedScene" uid="uid://lidx773oq75g" path="res://entity/player.tscn" id="7_j48du"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_iey7c"]
 resource_name = "temp tiles"
@@ -16,6 +17,12 @@ scenes/2/scene = ExtResource("2_epb64")
 [sub_resource type="TileSet" id="TileSet_dmglj"]
 tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetScenesCollectionSource_iey7c")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boundary_horizontal"]
+size = Vector2(1088, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boundary_vertical"]
+size = Vector2(64, 512)
 
 [node name="Level1" type="Node2D" unique_id=650273382]
 
@@ -42,6 +49,28 @@ distance = 4
 [node name="Wheelbarrow1" parent="Objects" unique_id=924564302 instance=ExtResource("4_5b03i")]
 position = Vector2(160, 96)
 rotation = 1.5707964
+
+[node name="MapBoundary" type="StaticBody2D" parent="." unique_id=296073403]
+collision_mask = 0
+
+[node name="Top" type="CollisionShape2D" parent="MapBoundary" unique_id=1013167352]
+position = Vector2(480, -32)
+shape = SubResource("RectangleShape2D_boundary_horizontal")
+
+[node name="Bottom" type="CollisionShape2D" parent="MapBoundary" unique_id=2104975916]
+position = Vector2(480, 544)
+shape = SubResource("RectangleShape2D_boundary_horizontal")
+
+[node name="Left" type="CollisionShape2D" parent="MapBoundary" unique_id=428846997]
+position = Vector2(-32, 256)
+shape = SubResource("RectangleShape2D_boundary_vertical")
+
+[node name="Right" type="CollisionShape2D" parent="MapBoundary" unique_id=499023084]
+position = Vector2(992, 256)
+shape = SubResource("RectangleShape2D_boundary_vertical")
+
+[node name="Player" parent="." unique_id=1589947595 instance=ExtResource("7_j48du")]
+position = Vector2(96, 224)
 
 [node name="WaterSystem" type="Node" parent="." unique_id=278669764 node_paths=PackedStringArray("objects_layer")]
 script = ExtResource("4_water_system")
