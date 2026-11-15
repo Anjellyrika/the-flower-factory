@@ -2,10 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpi3owfmps8ts" path="res://objects/channels/hose.gd" id="1_wwfbs"]
 [ext_resource type="Texture2D" uid="uid://xcw0jxh0vjbf" path="res://assets/hose.png" id="2_pi4ry"]
-[ext_resource type="Script" uid="uid://dq1pxoutbtiw0" path="res://objects/interaction_area.gd" id="3_interaction"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtpsn"]
-size = Vector2(64, 64)
+[ext_resource type="PackedScene" uid="uid://6d207b11a6c7" path="res://objects/interaction_area.tscn" id="3_interaction"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pi4ry"]
 font_color = Color(0, 0, 0, 1)
@@ -17,12 +14,7 @@ script = ExtResource("1_wwfbs")
 modulate = Color(1, 1, 1, 0.74509805)
 texture = ExtResource("2_pi4ry")
 
-[node name="InteractionArea" type="Area2D" parent="." unique_id=181662296]
-collision_layer = 0
-script = ExtResource("3_interaction")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1002039963]
-shape = SubResource("RectangleShape2D_mtpsn")
+[node name="InteractionArea" parent="." unique_id=181662296 instance=ExtResource("3_interaction")]
 
 [node name="PressureLabel" type="Label" parent="." unique_id=1356914213]
 offset_left = 2.0
