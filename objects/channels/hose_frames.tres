@@ -1,0 +1,113 @@
+[gd_resource type="SpriteFrames" load_steps=17 format=3]
+
+[ext_resource type="Texture2D" uid="uid://dq8y4iy7f06ge" path="res://assets/art/hose-sprites-left.png" id="Texture_left"]
+[ext_resource type="Texture2D" uid="uid://484xpouoi5yd" path="res://assets/art/hose-sprites-right.png" id="Texture_right"]
+[ext_resource type="Texture2D" uid="uid://5jfqhkgjf0ub" path="res://assets/art/hose-sprites-up.png" id="Texture_up"]
+[ext_resource type="Texture2D" uid="uid://dnojjg58sbdmq" path="res://assets/art/hose-sprites-down.png" id="Texture_down"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_left_0"]
+atlas = ExtResource("Texture_left")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_left_1"]
+atlas = ExtResource("Texture_left")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_left_2"]
+atlas = ExtResource("Texture_left")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_right_0"]
+atlas = ExtResource("Texture_right")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_right_1"]
+atlas = ExtResource("Texture_right")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_right_2"]
+atlas = ExtResource("Texture_right")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up_0"]
+atlas = ExtResource("Texture_up")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up_1"]
+atlas = ExtResource("Texture_up")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up_2"]
+atlas = ExtResource("Texture_up")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_down_0"]
+atlas = ExtResource("Texture_down")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_down_1"]
+atlas = ExtResource("Texture_down")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_down_2"]
+atlas = ExtResource("Texture_down")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_left_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_left_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_left_2")
+}],
+"loop": false,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_right_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_right_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_right_2")
+}],
+"loop": false,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up_2")
+}],
+"loop": false,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_down_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_down_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_down_2")
+}],
+"loop": false,
+"name": &"down",
+"speed": 5.0
+}]

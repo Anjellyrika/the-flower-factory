@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhyeiwu0a8qd3"]
 
 [ext_resource type="Script" uid="uid://bpi3owfmps8ts" path="res://objects/channels/hose.gd" id="1_wwfbs"]
-[ext_resource type="Texture2D" uid="uid://xcw0jxh0vjbf" path="res://assets/hose.png" id="2_pi4ry"]
+[ext_resource type="SpriteFrames" path="res://objects/channels/hose_frames.tres" id="2_pi4ry"]
 [ext_resource type="PackedScene" uid="uid://6d207b11a6c7" path="res://objects/interaction_area.tscn" id="3_interaction"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pi4ry"]
@@ -10,9 +10,10 @@ font_color = Color(0, 0, 0, 1)
 [node name="Hose" type="Node2D" unique_id=939167185]
 script = ExtResource("1_wwfbs")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=370143884]
-modulate = Color(1, 1, 1, 0.74509805)
-texture = ExtResource("2_pi4ry")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=370143884]
+sprite_frames = ExtResource("2_pi4ry")
+animation = &"right"
+frame = 2
 
 [node name="InteractionArea" parent="." unique_id=181662296 instance=ExtResource("3_interaction")]
 

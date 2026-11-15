@@ -15,7 +15,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("add_interactable"):
 		body.add_interactable(object_node)
-		object_node.modulate = Color.from_rgba8(255, 255, 120)
+		object_node.modulate = Color.from_rgba8(255, 110, 210)
 
 
 func _on_body_exited(body: Node2D) -> void:

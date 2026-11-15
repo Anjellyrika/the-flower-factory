@@ -3,7 +3,16 @@
 ## Interact to adjust the rotation
 extends Channel
 
+const DIRECTION_FRAMES: SpriteFrames = preload("res://objects/channels/wheelbarrow_frames.tres")
+
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sfx_player: AudioStreamPlayer2D = $SFX
+
+
+func _ready() -> void:
+	sprite.sprite_frames = DIRECTION_FRAMES
+	_update_sprite()
+
 
 func interact() -> void:
 	rotate_clockwise()
@@ -12,4 +21,18 @@ func interact() -> void:
 
 func rotate_clockwise() -> void:
 	rotation += PI / 2.0
+	_update_sprite()
 	changed.emit()
+
+
+func _update_sprite() -> void:
+	sprite.rotation = -rotation
+	match get_output_direction():
+		Vector2i.LEFT:
+			sprite.frame = 0
+		Vector2i.RIGHT:
+			sprite.frame = 1
+		Vector2i.UP:
+			sprite.frame = 2
+		Vector2i.DOWN:
+			sprite.frame = 3
