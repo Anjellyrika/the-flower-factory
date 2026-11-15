@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_oojoj"]
 [ext_resource type="Script" uid="uid://cnbneayrxnwok" path="res://objects/map_tiles/flower.gd" id="2_flower"]
+[ext_resource type="AudioStream" uid="uid://xd2qkljjg5v4" path="res://assets/sounds/bloom.wav" id="3_8spqg"]
 
 [node name="Flower" type="Node2D" unique_id=548349090]
 script = ExtResource("2_flower")
@@ -11,3 +12,6 @@ modulate = Color(1, 1, 1, 0.74509805)
 self_modulate = Color(0.98504275, 0.27646708, 0.99999994, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_oojoj")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1674137133]
+stream = ExtResource("3_8spqg")

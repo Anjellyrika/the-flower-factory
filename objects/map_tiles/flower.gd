@@ -5,6 +5,8 @@ extends Channel
 
 signal bloomed
 
+@onready var sfx_player: AudioStreamPlayer2D = $SFX
+
 var is_bloomed := false
 
 
@@ -21,3 +23,4 @@ func set_watered(value: bool) -> void:
 	if value and not is_bloomed:
 		is_bloomed = true
 		bloomed.emit()
+		sfx_player.play()
