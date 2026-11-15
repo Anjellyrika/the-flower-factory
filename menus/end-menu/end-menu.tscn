@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://da5afit418h0n"]
+
+[ext_resource type="Script" uid="uid://ctl717k3ok3so" path="res://menus/end-menu/end_menu.gd" id="1_ptq8k"]
+[ext_resource type="FontFile" uid="uid://d1qyba6gyum8v" path="res://assets/fonts/Signika-Bold.ttf" id="2_3b4eg"]
+[ext_resource type="FontFile" uid="uid://cgaho5dnn17cy" path="res://assets/fonts/Quicksand-VariableFont_wght.ttf" id="3_l8w33"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="4_3b4eg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5wqft"]
+line_spacing = -32.0
+font = ExtResource("2_3b4eg")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xv4o"]
+font = ExtResource("3_l8w33")
+font_size = 40
+font_color = Color(0.14901961, 0.11764706, 0, 1)
+
+[node name="EndMenu" type="Control" unique_id=122722603]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ptq8k")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1041148450]
+layout_mode = 0
+offset_right = 962.0
+offset_bottom = 642.0
+color = Color(0.49019608, 0.8509804, 0.6039216, 1)
+
+[node name="Heading" type="Label" parent="." unique_id=1685628894]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 44.0
+offset_right = 847.0
+offset_bottom = 287.0
+text = "Thank you for playing!"
+label_settings = SubResource("LabelSettings_5wqft")
+
+[node name="Text" type="Label" parent="." unique_id=1605259023]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 161.0
+offset_right = 846.0
+offset_bottom = 404.0
+text = "Animals friends unlocked:"
+label_settings = SubResource("LabelSettings_3xv4o")
+
+[node name="Container" type="Control" parent="." unique_id=803880564]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cat" type="Sprite2D" parent="Container" unique_id=143095670]
+modulate = Color(0, 0, 0, 0.47058824)
+position = Vector2(114, 334)
+texture = ExtResource("4_3b4eg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=357102704]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 494.0
+offset_right = 903.0
+offset_bottom = 585.0
+theme_override_constants/separation = 20
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=398746340]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_l8w33")
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

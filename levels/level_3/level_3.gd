@@ -11,7 +11,6 @@ var _bonus_started: bool = false
 
 func _ready() -> void:
 	if 'CAT' in AnimalFriends.unlocked:
-		print('cat in unlocked list')
 		reveal_bonus()
 
 
@@ -38,4 +37,4 @@ func reveal_bonus() -> void:
 
 
 func _on_continue_pressed() -> void:
-	get_tree().change_scene_to_file("res://levels/level_1/level_1.tscn")
+	get_tree().change_scene_to_file("res://menus/end-menu/end-menu.tscn")
