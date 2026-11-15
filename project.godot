@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 AnimalFriends="*uid://h4ao0t5hhl47"
+DialogueManager="*uid://c3rodes2l3gxb"
+SfxPlayer="*uid://daoifqasekmdi"
 
 [display]
 
@@ -25,6 +27,10 @@ window/size/viewport_width=960
 window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 

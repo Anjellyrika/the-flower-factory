@@ -96,7 +96,7 @@ rotation = 1.5707964
 process_mode = 4
 visible = false
 
-[node name="Cat" parent="BonusNodes" instance=ExtResource("9_cat")]
+[node name="Cat" parent="BonusNodes" unique_id=726778875 instance=ExtResource("9_cat")]
 position = Vector2(480, 32)
 
 [node name="Hose-Bonus" parent="BonusNodes" unique_id=1243897117 instance=ExtResource("5_8fdlj")]

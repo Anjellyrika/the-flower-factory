@@ -7,6 +7,10 @@ extends CharacterBody2D
 var _nearby_interactables: Array[Node2D] = []
 
 
+func _exit_tree() -> void:
+	SfxPlayer.stop_dog_walking_sound()
+
+
 func add_interactable(target: Node2D) -> void:
 	if not target in _nearby_interactables:
 		_nearby_interactables.append(target)
@@ -42,4 +46,9 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	if input_dir.x != 0.0:
 		sprite.flip_h = input_dir.x < 0.0
-	sprite.play("walk" if input_dir != Vector2.ZERO else "idle")
+	if input_dir != Vector2.ZERO:
+		sprite.play("walk")
+		SfxPlayer.play_dog_walking_sound()
+	else:
+		sprite.play("idle")
+		SfxPlayer.stop_dog_walking_sound()
