@@ -1,0 +1,88 @@
+[gd_scene format=4 uid="uid://cwmgoailiqato"]
+
+[ext_resource type="Script" uid="uid://d34uto5bo4an7" path="res://levels/level_2/level_2.gd" id="1_0b444"]
+[ext_resource type="PackedScene" uid="uid://dfp8urdyj4ey0" path="res://objects/map_tiles/grass.tscn" id="2_618ip"]
+[ext_resource type="PackedScene" uid="uid://dkcyqplmkm1tl" path="res://objects/map_tiles/water.tscn" id="3_b2p4p"]
+[ext_resource type="TileSet" uid="uid://cha3wu5aejg2k" path="res://objects/objects.tres" id="4_8y2in"]
+[ext_resource type="PackedScene" uid="uid://lidx773oq75g" path="res://entity/player.tscn" id="5_0butd"]
+[ext_resource type="PackedScene" uid="uid://dhyeiwu0a8qd3" path="res://objects/channels/hose.tscn" id="5_ubkp0"]
+[ext_resource type="Script" uid="uid://elb433e5t2vs" path="res://levels/water_system.gd" id="6_8y2in"]
+[ext_resource type="PackedScene" uid="uid://8g37kstt60ek" path="res://objects/channels/wheelbarrow.tscn" id="6_un0ug"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4nbo2"]
+resource_name = "temp tiles"
+scenes/1/scene = ExtResource("2_618ip")
+scenes/2/scene = ExtResource("3_b2p4p")
+
+[sub_resource type="TileSet" id="TileSet_8r3qo"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetScenesCollectionSource_4nbo2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubkp0"]
+size = Vector2(1088, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un0ug"]
+size = Vector2(64, 704)
+
+[node name="Level2" type="Node2D" unique_id=1539282350]
+script = ExtResource("1_0b444")
+
+[node name="Grass" type="TileMapLayer" parent="." unique_id=259547488]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAQABAAAAAQAAAAAAAQABAAEAAQAAAAAAAQACAAEAAQAAAAAAAQAFAAMAAQAAAAAAAQAGAAMAAQAAAAAAAQAGAAQAAQAAAAAAAQAHAAQAAQAAAAAAAQAHAAUAAQAAAAAAAQAIAAUAAQAAAAAAAQAJAAUAAQAAAAAAAQAKAAUAAQAAAAAAAQAKAAYAAQAAAAAAAQALAAYAAQAAAAAAAQAMAAYAAQAAAAAAAQANAAcAAQAAAAAAAQAOAAcAAQAAAAAAAQAGAAcAAQAAAAAAAQAGAAYAAQAAAAAAAQAGAAUAAQAAAAAAAQAFAAUAAQAAAAAAAQAFAAQAAQAAAAAAAQAEAAQAAQAAAAAAAQADAAQAAQAAAAAAAQADAAMAAQAAAAAAAQACAAMAAQAAAAAAAQABAAIAAQAAAAAAAQAAAAIAAQAAAAAAAQAAAAEAAQAAAAAAAQAAAAMAAQAAAAAAAQAAAAQAAQAAAAAAAQAAAAUAAQAAAAAAAQAAAAYAAQAAAAAAAQAAAAcAAQAAAAAAAQABAAcAAQAAAAAAAQABAAYAAQAAAAAAAQABAAUAAQAAAAAAAQABAAQAAQAAAAAAAQABAAMAAQAAAAAAAQACAAQAAQAAAAAAAQACAAUAAQAAAAAAAQACAAYAAQAAAAAAAQACAAcAAQAAAAAAAQADAAcAAQAAAAAAAQADAAYAAQAAAAAAAQADAAUAAQAAAAAAAQAEAAUAAQAAAAAAAQAEAAYAAQAAAAAAAQAEAAcAAQAAAAAAAQAFAAcAAQAAAAAAAQAFAAYAAQAAAAAAAQAHAAYAAQAAAAAAAQAHAAcAAQAAAAAAAQAIAAcAAQAAAAAAAQAIAAYAAQAAAAAAAQAJAAYAAQAAAAAAAQAJAAcAAQAAAAAAAQAKAAcAAQAAAAAAAQALAAcAAQAAAAAAAQAMAAcAAQAAAAAAAQAMAAQAAQAAAAAAAQAMAAMAAQAAAAAAAQAMAAIAAQAAAAAAAQAMAAEAAQAAAAAAAQAMAAAAAQAAAAAAAQALAAAAAQAAAAAAAQAKAAAAAQAAAAAAAQAJAAAAAQAAAAAAAQAIAAAAAQAAAAAAAQAHAAAAAQAAAAAAAQAGAAAAAQAAAAAAAQAFAAAAAQAAAAAAAQAEAAAAAQAAAAAAAQADAAAAAQAAAAAAAQACAAAAAQAAAAAAAQADAAEAAQAAAAAAAQAFAAEAAQAAAAAAAQAFAAIAAQAAAAAAAQAGAAIAAQAAAAAAAQAGAAEAAQAAAAAAAQAHAAEAAQAAAAAAAQAHAAIAAQAAAAAAAQAHAAMAAQAAAAAAAQAIAAMAAQAAAAAAAQAIAAIAAQAAAAAAAQAIAAEAAQAAAAAAAQAJAAEAAQAAAAAAAQAJAAIAAQAAAAAAAQAJAAMAAQAAAAAAAQAJAAQAAQAAAAAAAQAIAAQAAQAAAAAAAQAKAAQAAQAAAAAAAQAKAAMAAQAAAAAAAQAKAAIAAQAAAAAAAQAKAAEAAQAAAAAAAQALAAEAAQAAAAAAAQALAAIAAQAAAAAAAQALAAMAAQAAAAAAAQALAAQAAQAAAAAAAQALAAUAAQAAAAAAAQAMAAUAAQAAAAAAAQANAAUAAQAAAAAAAQANAAQAAQAAAAAAAQANAAMAAQAAAAAAAQANAAIAAQAAAAAAAQANAAEAAQAAAAAAAQANAAAAAQAAAAAAAQAOAAAAAQAAAAAAAQAOAAEAAQAAAAAAAQAOAAIAAQAAAAAAAQAOAAMAAQAAAAAAAQAOAAQAAQAAAAAAAQAOAAUAAQAAAAAAAQAOAAYAAQAAAAAAAQANAAYAAQAAAAAAAQAEAAMAAQAAAAAAAQAAAAgAAQAAAAAAAQAAAAkAAQAAAAAAAQABAAgAAQAAAAAAAQABAAkAAQAAAAAAAQACAAgAAQAAAAAAAQACAAkAAQAAAAAAAQADAAgAAQAAAAAAAQADAAkAAQAAAAAAAQAEAAgAAQAAAAAAAQAEAAkAAQAAAAAAAQAFAAgAAQAAAAAAAQAFAAkAAQAAAAAAAQAGAAgAAQAAAAAAAQAGAAkAAQAAAAAAAQAHAAgAAQAAAAAAAQAHAAkAAQAAAAAAAQAIAAgAAQAAAAAAAQAIAAkAAQAAAAAAAQAJAAgAAQAAAAAAAQAJAAkAAQAAAAAAAQAKAAgAAQAAAAAAAQAKAAkAAQAAAAAAAQALAAgAAQAAAAAAAQALAAkAAQAAAAAAAQAMAAgAAQAAAAAAAQAMAAkAAQAAAAAAAQANAAgAAQAAAAAAAQANAAkAAQAAAAAAAQAOAAgAAQAAAAAAAQAOAAkAAQAAAAAAAQAEAAIAAQAAAAAAAQADAAIAAQAAAAAAAQACAAIAAQAAAAAAAQAEAAEAAQAAAAAAAQA=")
+tile_set = SubResource("TileSet_8r3qo")
+
+[node name="Objects" type="TileMapLayer" parent="." unique_id=331230404]
+tile_map_data = PackedByteArray("AAAAAAgAAQAAAAAAAQABAAgAAAAAAAAAAgAEAAgAAAAAAAAABAAGAAgAAAAAAAAABAAEAAcAAwAAAAAAAQAGAAQAAwAAAAAAAQA=")
+tile_set = ExtResource("4_8y2in")
+
+[node name="Hose1" parent="Objects" unique_id=939167185 instance=ExtResource("5_ubkp0")]
+position = Vector2(160, 544)
+distance = 3
+
+[node name="Wheelbarrow" parent="Objects" unique_id=924564302 instance=ExtResource("6_un0ug")]
+position = Vector2(416, 480)
+rotation = -1.5707964
+
+[node name="Hose2" parent="Objects" unique_id=682465049 instance=ExtResource("5_ubkp0")]
+position = Vector2(416, 416)
+rotation = -1.5707964
+
+[node name="MapBoundary" type="StaticBody2D" parent="." unique_id=1430419111]
+collision_mask = 0
+
+[node name="Top" type="CollisionShape2D" parent="MapBoundary" unique_id=1691770713]
+position = Vector2(480, -32)
+shape = SubResource("RectangleShape2D_ubkp0")
+
+[node name="Bottom" type="CollisionShape2D" parent="MapBoundary" unique_id=959863975]
+position = Vector2(480, 672)
+shape = SubResource("RectangleShape2D_ubkp0")
+
+[node name="Left" type="CollisionShape2D" parent="MapBoundary" unique_id=1210471931]
+position = Vector2(-32, 352)
+shape = SubResource("RectangleShape2D_un0ug")
+
+[node name="Right" type="CollisionShape2D" parent="MapBoundary" unique_id=1431583878]
+position = Vector2(992, 352)
+shape = SubResource("RectangleShape2D_un0ug")
+
+[node name="Player" parent="." unique_id=574021666 instance=ExtResource("5_0butd")]
+position = Vector2(96, 224)
+
+[node name="WaterSystem" type="Node" parent="." unique_id=802386621 node_paths=PackedStringArray("objects_layer", "ground_layer")]
+script = ExtResource("6_8y2in")
+objects_layer = NodePath("../Objects")
+ground_layer = NodePath("../Grass")
+
+[node name="Continue" type="Button" parent="WaterSystem" unique_id=771147514]
+visible = false
+offset_left = 543.0
+offset_top = 481.0
+offset_right = 922.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "You watered the flowers!
+Click to Continue."
+
+[connection signal="pressed" from="WaterSystem/Continue" to="." method="_on_continue_pressed"]
