@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
+const UP = preload("res://assets/art/diwa-up.png")
+const DOWN = preload("res://assets/art/diwa-down.png")
+const LEFT = preload("res://assets/art/diwa-left.png")
+const RIGHT = preload("res://assets/art/diwa-right.png")
+
 @export var move_speed: float = 200.0
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 var _nearby_interactables: Array[Node2D] = []
 
@@ -45,10 +50,10 @@ func _physics_process(_delta: float) -> void:
 	velocity = input_dir * move_speed
 	move_and_slide()
 	if input_dir.x != 0.0:
-		sprite.flip_h = input_dir.x < 0.0
+		sprite.texture = LEFT if input_dir.x < 0.0 else RIGHT
+	elif input_dir.y != 0.0:
+		sprite.texture = UP if input_dir.y < 0.0 else DOWN
 	if input_dir != Vector2.ZERO:
-		sprite.play("walk")
 		SfxPlayer.play_dog_walking_sound()
 	else:
-		sprite.play("idle")
 		SfxPlayer.stop_dog_walking_sound()
