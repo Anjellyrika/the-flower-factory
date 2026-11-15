@@ -3,11 +3,33 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_oojoj"]
 [ext_resource type="Script" uid="uid://cnbneayrxnwok" path="res://objects/map_tiles/flower.gd" id="2_flower"]
 [ext_resource type="AudioStream" uid="uid://xd2qkljjg5v4" path="res://assets/sounds/bloom.wav" id="3_8spqg"]
+[ext_resource type="Texture2D" uid="uid://n46m2nqapn1u" path="res://assets/art/flower.png" id="4_x5jb3"]
+[ext_resource type="Texture2D" uid="uid://dlg8ca8hcpsv" path="res://assets/art/flower-wilt.png" id="5_3u1fi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y00b8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x5jb3")
+}],
+"loop": 1,
+"name": &"bloom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3u1fi")
+}],
+"loop": 1,
+"name": &"wilt",
+"speed": 5.0
+}]
 
 [node name="Flower" type="Node2D" unique_id=548349090]
 script = ExtResource("2_flower")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=440948423]
+visible = false
 modulate = Color(1, 1, 1, 0.74509805)
 self_modulate = Color(0.98504275, 0.27646708, 0.99999994, 1)
 scale = Vector2(0.5, 0.5)
@@ -15,3 +37,8 @@ texture = ExtResource("1_oojoj")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1674137133]
 stream = ExtResource("3_8spqg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=441601709]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_y00b8")
+animation = &"bloom"
