@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c6it88tmio6kb"]
+
+[node name="Splash" type="Node2D" unique_id=1911366720]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1961609174]
+position = Vector2(-32, -32)
+color = Color(0.31764707, 1, 1, 1)
+polygon = PackedVector2Array(21, 23, 6, 20, 13, 38, 6, 55, 35, 63, 39, 55, 53, 55, 46, 29, 63, 15, 48, 16, 34, 1, 28, 11, 7, 4)
