@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bl2o0sdxthjaw"]
 
 [ext_resource type="Script" uid="uid://dic75yccg1fwy" path="res://objects/channels/sprinkler.gd" id="1_iqvmc"]
-[ext_resource type="Texture2D" uid="uid://din3uegf1xy7" path="res://assets/sprinkler.png" id="2_trhti"]
+[ext_resource type="Texture2D" uid="uid://brmr00dybi2mv" path="res://assets/art/sprinkler.png" id="2_trhti"]
 [ext_resource type="AudioStream" uid="uid://bt8q27fhyhrbb" path="res://assets/sounds/sprinkler3.wav" id="3_trhti"]
 
 [node name="Sprinkler" type="Node2D" unique_id=18581707]
@@ -15,4 +15,3 @@ texture = ExtResource("2_trhti")
 stream = ExtResource("3_trhti")
 volume_db = 1.5
 pitch_scale = 1.5
-max_polyphony = 1

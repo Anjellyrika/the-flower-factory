@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bb54ljhivqun4"]
 
+[ext_resource type="Texture2D" uid="uid://b316qcgl3s0a0" path="res://assets/art/rock1.png" id="1_7rib8"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y00b8"]
 size = Vector2(64, 64)
 
@@ -8,9 +10,7 @@ size = Vector2(64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1558804273]
 shape = SubResource("RectangleShape2D_y00b8")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1202982367]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(0.3372549, 0.3372549, 0.3372549, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009699810]
+position = Vector2(1.4999983, 2.5000033)
+scale = Vector2(1.2343749, 1.203125)
+texture = ExtResource("1_7rib8")
