@@ -23,6 +23,8 @@ func reveal_bonus() -> void:
 
 	_cat.reparent(self)
 	_cat.show()
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/bonus.dialogue"), "start")
+	await DialogueManager.dialogue_ended
 	await _cat.play_bonus(_objects)
 
 	# Swap Rock and bonus Hose

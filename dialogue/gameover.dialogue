@@ -3,7 +3,7 @@ Game: Congratulations! You've saved the garden for now! Thank you for taking car
 
 Game: You have unlocked the following animal companions...
 
-if GameState.did_bonus:
+if 'CAT' in AnimalFriends.unlocked:
 	Game: You met Julia! She is actually based on a real shelter cat at PAWS.
 	Game: If you are interested in meeting her, you may do so at the following link: https://paws.org.ph/julia/
 => END
