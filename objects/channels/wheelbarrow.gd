@@ -3,9 +3,11 @@
 ## Interact to adjust the rotation
 extends Channel
 
+@onready var sfx_player: AudioStreamPlayer2D = $SFX
 
 func interact() -> void:
 	rotate_clockwise()
+	sfx_player.play()
 
 
 func rotate_clockwise() -> void:

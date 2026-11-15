@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://y2fv7qygt5cb" path="res://objects/channels/wheelbarrow.gd" id="1_dr7mu"]
 [ext_resource type="Texture2D" uid="uid://daxwccyvvmrwu" path="res://assets/wheelbarrow.png" id="2_lw6y4"]
 [ext_resource type="PackedScene" uid="uid://6d207b11a6c7" path="res://objects/interaction_area.tscn" id="3_lw6y4"]
+[ext_resource type="AudioStream" uid="uid://doebp0uq4rkns" path="res://assets/sounds/wheelbarrow_turn.wav" id="4_gyi0p"]
 
 [node name="Wheelbarrow" type="Node2D" unique_id=924564302]
 script = ExtResource("1_dr7mu")
@@ -13,3 +14,6 @@ modulate = Color(1, 1, 1, 0.74509805)
 texture = ExtResource("2_lw6y4")
 
 [node name="InteractionArea" parent="." unique_id=1861413833 instance=ExtResource("3_lw6y4")]
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=836833214]
+stream = ExtResource("4_gyi0p")

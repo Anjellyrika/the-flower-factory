@@ -23,3 +23,5 @@ offset_right = 42.0
 offset_bottom = 33.0
 text = "null"
 label_settings = SubResource("LabelSettings_pi4ry")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
