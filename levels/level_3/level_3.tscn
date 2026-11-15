@@ -1,0 +1,127 @@
+[gd_scene format=4 uid="uid://it407erbusxu"]
+
+[ext_resource type="PackedScene" uid="uid://dfp8urdyj4ey0" path="res://objects/map_tiles/grass.tscn" id="1_0c4fo"]
+[ext_resource type="Script" uid="uid://rmbne8sd0nou" path="res://levels/level_3/level_3.gd" id="1_8fdlj"]
+[ext_resource type="PackedScene" uid="uid://dkcyqplmkm1tl" path="res://objects/map_tiles/water.tscn" id="2_e2rvl"]
+[ext_resource type="TileSet" uid="uid://cha3wu5aejg2k" path="res://objects/objects.tres" id="3_rpg41"]
+[ext_resource type="PackedScene" uid="uid://bo4k4bs3rtuvb" path="res://objects/channels/halfpipe.tscn" id="4_dq2kg"]
+[ext_resource type="PackedScene" uid="uid://lidx773oq75g" path="res://entity/player.tscn" id="4_xgkfy"]
+[ext_resource type="PackedScene" uid="uid://dhyeiwu0a8qd3" path="res://objects/channels/hose.tscn" id="5_8fdlj"]
+[ext_resource type="Script" uid="uid://elb433e5t2vs" path="res://levels/water_system.gd" id="5_8t4gc"]
+[ext_resource type="PackedScene" uid="uid://bb54ljhivqun4" path="res://objects/obstacles/rock.tscn" id="6_8655v"]
+[ext_resource type="PackedScene" uid="uid://bl2o0sdxthjaw" path="res://objects/channels/sprinkler.tscn" id="7_md8fn"]
+[ext_resource type="PackedScene" uid="uid://8g37kstt60ek" path="res://objects/channels/wheelbarrow.tscn" id="8_mc5n5"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_dq2kg"]
+resource_name = "temp tiles"
+scenes/1/scene = ExtResource("1_0c4fo")
+scenes/2/scene = ExtResource("2_e2rvl")
+
+[sub_resource type="TileSet" id="TileSet_8fdlj"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetScenesCollectionSource_dq2kg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8655v"]
+size = Vector2(1088, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md8fn"]
+size = Vector2(64, 704)
+
+[node name="Level3" type="Node2D" unique_id=2092638888]
+script = ExtResource("1_8fdlj")
+
+[node name="Grass" type="TileMapLayer" parent="." unique_id=1165701422]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAQABAAAAAQAAAAAAAQABAAEAAQAAAAAAAQACAAEAAQAAAAAAAQAFAAMAAQAAAAAAAQAGAAMAAQAAAAAAAQAGAAQAAQAAAAAAAQAHAAQAAQAAAAAAAQAHAAUAAQAAAAAAAQAIAAUAAQAAAAAAAQAJAAUAAQAAAAAAAQAKAAUAAQAAAAAAAQAKAAYAAQAAAAAAAQALAAYAAQAAAAAAAQAMAAYAAQAAAAAAAQANAAcAAQAAAAAAAQAOAAcAAQAAAAAAAQAGAAcAAQAAAAAAAQAGAAYAAQAAAAAAAQAGAAUAAQAAAAAAAQAFAAUAAQAAAAAAAQAFAAQAAQAAAAAAAQAEAAQAAQAAAAAAAQADAAQAAQAAAAAAAQADAAMAAQAAAAAAAQACAAMAAQAAAAAAAQABAAIAAQAAAAAAAQAAAAIAAQAAAAAAAQAAAAEAAQAAAAAAAQAAAAMAAQAAAAAAAQAAAAQAAQAAAAAAAQAAAAUAAQAAAAAAAQAAAAYAAQAAAAAAAQAAAAcAAQAAAAAAAQABAAcAAQAAAAAAAQABAAYAAQAAAAAAAQABAAUAAQAAAAAAAQABAAQAAQAAAAAAAQABAAMAAQAAAAAAAQACAAQAAQAAAAAAAQACAAUAAQAAAAAAAQACAAYAAQAAAAAAAQACAAcAAQAAAAAAAQADAAcAAQAAAAAAAQADAAYAAQAAAAAAAQADAAUAAQAAAAAAAQAEAAUAAQAAAAAAAQAEAAYAAQAAAAAAAQAEAAcAAQAAAAAAAQAFAAcAAQAAAAAAAQAFAAYAAQAAAAAAAQAHAAYAAQAAAAAAAQAHAAcAAQAAAAAAAQAIAAcAAQAAAAAAAQAIAAYAAQAAAAAAAQAJAAYAAQAAAAAAAQAJAAcAAQAAAAAAAQAKAAcAAQAAAAAAAQALAAcAAQAAAAAAAQAMAAcAAQAAAAAAAQAMAAQAAQAAAAAAAQAMAAMAAQAAAAAAAQAMAAIAAQAAAAAAAQAMAAEAAQAAAAAAAQAMAAAAAQAAAAAAAQALAAAAAQAAAAAAAQAKAAAAAQAAAAAAAQAJAAAAAQAAAAAAAQAIAAAAAQAAAAAAAQAHAAAAAQAAAAAAAQAGAAAAAQAAAAAAAQAFAAAAAQAAAAAAAQAEAAAAAQAAAAAAAQADAAAAAQAAAAAAAQACAAAAAQAAAAAAAQADAAEAAQAAAAAAAQAFAAEAAQAAAAAAAQAFAAIAAQAAAAAAAQAGAAIAAQAAAAAAAQAGAAEAAQAAAAAAAQAHAAEAAQAAAAAAAQAHAAIAAQAAAAAAAQAHAAMAAQAAAAAAAQAIAAMAAQAAAAAAAQAIAAIAAQAAAAAAAQAIAAEAAQAAAAAAAQAJAAEAAQAAAAAAAQAJAAIAAQAAAAAAAQAJAAMAAQAAAAAAAQAJAAQAAQAAAAAAAQAIAAQAAQAAAAAAAQAKAAQAAQAAAAAAAQAKAAMAAQAAAAAAAQAKAAIAAQAAAAAAAQAKAAEAAQAAAAAAAQALAAEAAQAAAAAAAQALAAIAAQAAAAAAAQALAAMAAQAAAAAAAQALAAQAAQAAAAAAAQALAAUAAQAAAAAAAQAMAAUAAQAAAAAAAQANAAUAAQAAAAAAAQANAAQAAQAAAAAAAQANAAMAAQAAAAAAAQANAAIAAQAAAAAAAQANAAEAAQAAAAAAAQANAAAAAQAAAAAAAQAOAAAAAQAAAAAAAQAOAAEAAQAAAAAAAQAOAAIAAQAAAAAAAQAOAAMAAQAAAAAAAQAOAAQAAQAAAAAAAQAOAAUAAQAAAAAAAQAOAAYAAQAAAAAAAQANAAYAAQAAAAAAAQAEAAMAAQAAAAAAAQAAAAgAAQAAAAAAAQAAAAkAAQAAAAAAAQABAAgAAQAAAAAAAQABAAkAAQAAAAAAAQACAAgAAQAAAAAAAQACAAkAAQAAAAAAAQADAAgAAQAAAAAAAQADAAkAAQAAAAAAAQAEAAgAAQAAAAAAAQAEAAkAAQAAAAAAAQAFAAgAAQAAAAAAAQAFAAkAAQAAAAAAAQAGAAgAAQAAAAAAAQAGAAkAAQAAAAAAAQAHAAgAAQAAAAAAAQAHAAkAAQAAAAAAAQAIAAgAAQAAAAAAAQAIAAkAAQAAAAAAAQAJAAgAAQAAAAAAAQAJAAkAAQAAAAAAAQAKAAgAAQAAAAAAAQAKAAkAAQAAAAAAAQALAAgAAQAAAAAAAQALAAkAAQAAAAAAAQAMAAgAAQAAAAAAAQAMAAkAAQAAAAAAAQANAAgAAQAAAAAAAQANAAkAAQAAAAAAAQAOAAgAAQAAAAAAAQAOAAkAAQAAAAAAAQAEAAIAAQAAAAAAAQADAAIAAQAAAAAAAQACAAIAAQAAAAAAAQAEAAEAAQAAAAAAAQA=")
+tile_set = SubResource("TileSet_8fdlj")
+
+[node name="Objects" type="TileMapLayer" parent="." unique_id=609159400]
+tile_map_data = PackedByteArray("AAAFAAYAAAAAAAAAAgAHAAYAAwAAAAAAAQAJAAYAAwAAAAAAAQA=")
+tile_set = ExtResource("3_rpg41")
+
+[node name="Water" parent="Objects" unique_id=143580654 instance=ExtResource("2_e2rvl")]
+position = Vector2(928, 224)
+input_direction = Vector2i(0, 0)
+output_direction = Vector2i(-1, 0)
+
+[node name="Halfpipe1" parent="Objects" unique_id=1311874718 instance=ExtResource("4_dq2kg")]
+position = Vector2(864, 224)
+rotation = 3.1415927
+
+[node name="Hose1" parent="Objects" unique_id=939167185 instance=ExtResource("5_8fdlj")]
+position = Vector2(736, 224)
+rotation = 3.1415927
+
+[node name="Hose2" parent="Objects" unique_id=1457209962 instance=ExtResource("5_8fdlj")]
+position = Vector2(608, 224)
+rotation = 1.5707964
+
+[node name="Hose3" parent="Objects" unique_id=1109031672 instance=ExtResource("5_8fdlj")]
+position = Vector2(544.00006, 224)
+rotation = 3.1415927
+
+[node name="Rock-Bonus" parent="Objects" unique_id=497777531 instance=ExtResource("6_8655v")]
+position = Vector2(480, 224)
+
+[node name="Hose-Bonus" parent="Objects" unique_id=1243897117 instance=ExtResource("5_8fdlj")]
+position = Vector2(480, 224)
+rotation = 1.5707964
+
+[node name="Halfpipe2" parent="Objects" unique_id=328939017 instance=ExtResource("4_dq2kg")]
+position = Vector2(288, 288)
+rotation = 1.5707964
+
+[node name="Halfpipe3" parent="Objects" unique_id=3246297 instance=ExtResource("4_dq2kg")]
+position = Vector2(288, 352)
+rotation = 1.5707964
+
+[node name="Sprinkler1" parent="Objects" unique_id=18581707 instance=ExtResource("7_md8fn")]
+position = Vector2(800, 224)
+
+[node name="Sprinkler2" parent="Objects" unique_id=493974065 instance=ExtResource("7_md8fn")]
+position = Vector2(288, 224)
+
+[node name="Wheelbarrow1" parent="Objects" unique_id=924564302 instance=ExtResource("8_mc5n5")]
+position = Vector2(416, 416)
+
+[node name="Sprinkler3" parent="Objects" unique_id=1780783228 instance=ExtResource("7_md8fn")]
+position = Vector2(288, 416)
+
+[node name="MapBoundary" type="StaticBody2D" parent="." unique_id=928469509]
+collision_mask = 0
+
+[node name="Top" type="CollisionShape2D" parent="MapBoundary" unique_id=742778478]
+position = Vector2(480, -32)
+shape = SubResource("RectangleShape2D_8655v")
+
+[node name="Bottom" type="CollisionShape2D" parent="MapBoundary" unique_id=589363440]
+position = Vector2(480, 672)
+shape = SubResource("RectangleShape2D_8655v")
+
+[node name="Left" type="CollisionShape2D" parent="MapBoundary" unique_id=1110986315]
+position = Vector2(-32, 352)
+shape = SubResource("RectangleShape2D_md8fn")
+
+[node name="Right" type="CollisionShape2D" parent="MapBoundary" unique_id=189156718]
+position = Vector2(992, 352)
+shape = SubResource("RectangleShape2D_md8fn")
+
+[node name="Player" parent="." unique_id=574021666 instance=ExtResource("4_xgkfy")]
+position = Vector2(96, 224)
+
+[node name="WaterSystem" type="Node" parent="." unique_id=2066586635 node_paths=PackedStringArray("objects_layer", "ground_layer")]
+script = ExtResource("5_8t4gc")
+objects_layer = NodePath("../Objects")
+ground_layer = NodePath("../Grass")
+
+[node name="Continue" type="Button" parent="WaterSystem" unique_id=1084625413]
+visible = false
+offset_left = 543.0
+offset_top = 481.0
+offset_right = 922.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "You watered the flowers!
+Click to Continue."
+
+[connection signal="pressed" from="WaterSystem/Continue" to="." method="_on_continue_pressed"]
