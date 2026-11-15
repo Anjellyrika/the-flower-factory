@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bujs6sy76cj3a"]
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_oojoj"]
-[ext_resource type="Script" path="res://objects/map_tiles/flower.gd" id="2_flower"]
+[ext_resource type="Script" uid="uid://cnbneayrxnwok" path="res://objects/map_tiles/flower.gd" id="2_flower"]
 
 [node name="Flower" type="Node2D" unique_id=548349090]
 script = ExtResource("2_flower")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=440948423]
 modulate = Color(1, 1, 1, 0.74509805)
+self_modulate = Color(0.98504275, 0.27646708, 0.99999994, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_oojoj")

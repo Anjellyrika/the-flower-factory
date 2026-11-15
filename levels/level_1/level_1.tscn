@@ -31,7 +31,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAQABAAAAAQAAAAAAAQABAAEAAQAAAAA
 tile_set = SubResource("TileSet_dmglj")
 
 [node name="Objects" type="TileMapLayer" parent="." unique_id=870835876]
-tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAQABAAEAAAAAAAAAAgADAAMAAgAAAAAAAQAHAAQAAwAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAQABAAEAAAAAAAAAAgADAAMAAgAAAAAAAQAHAAQAAAAAAAAAAgAIAAQAAAAAAAAABAAIAAMAAwAAAAAAAQA=")
 tile_set = ExtResource("3_epb64")
 
 [node name="Sprinkler1" parent="Objects" unique_id=18581707 instance=ExtResource("4_e6u7d")]
@@ -72,6 +72,7 @@ shape = SubResource("RectangleShape2D_boundary_vertical")
 [node name="Player" parent="." unique_id=1589947595 instance=ExtResource("7_j48du")]
 position = Vector2(96, 224)
 
-[node name="WaterSystem" type="Node" parent="." unique_id=278669764 node_paths=PackedStringArray("objects_layer")]
+[node name="WaterSystem" type="Node" parent="." unique_id=278669764 node_paths=PackedStringArray("objects_layer", "ground_layer")]
 script = ExtResource("4_water_system")
 objects_layer = NodePath("../Objects")
+ground_layer = NodePath("../Grass")

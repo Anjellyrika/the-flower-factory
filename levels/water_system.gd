@@ -59,7 +59,7 @@ func update_water_flow() -> void:
 
 func _is_empty_ground(cell: Vector2i) -> bool:
 	if ground_layer == null:
-		
+		push_warning("Invalid ground layer.")
 		return false
 	var world_position := objects_layer.to_global(objects_layer.map_to_local(cell))
 	var ground_cell := ground_layer.local_to_map(ground_layer.to_local(world_position))
