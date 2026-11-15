@@ -284,5 +284,7 @@ Diwa: I’ve gotta do something… What did Gramps always do in times like this?
 Diwa: Ah! I know what the flower needs. 
 
 Diwa: Water. It needs water, fast.
+
+do get_tree().change_scene_to_file("res://levels/level_1/level_1.tscn")
 => END
 
