@@ -1,7 +1,7 @@
 ## Flowers must be connected to water to win the level.
 ## Input from any of four sides
+class_name Flower
 extends Channel
-# TODO: Make Flower class
 
 signal bloomed
 

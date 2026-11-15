@@ -10,11 +10,19 @@ var channels: Dictionary[Vector2i, Channel] = {}
 var _water_sources: Array[Channel] = []
 var _splashes: Dictionary[Vector2i, Node2D] = {}
 var _splash_parent: Node2D
+var _flowers: Array[Flower] = []
+
+@onready var _continue_button: Button = $Continue
 
 
 func _ready() -> void:
+	_continue_button.hide()
+	_continue_button.disabled = true
 	objects_layer.update_internals()
 	for object in objects_layer.get_children():
+		if object is Flower: # Record flower locations
+			_flowers.append(object)
+			object.bloomed.connect(_on_flower_bloomed)
 		if object is Channel: # Record channel locations
 			object.cell = objects_layer.local_to_map(objects_layer.to_local(object.global_position))
 			channels[object.cell] = object
@@ -27,6 +35,17 @@ func _ready() -> void:
 	_splash_parent.name = "Splashes"
 	objects_layer.add_child(_splash_parent)
 	update_water_flow()
+	_on_flower_bloomed()
+
+
+func _on_flower_bloomed() -> void:
+	if _flowers.is_empty():
+		return
+	for flower in _flowers:
+		if not flower.is_bloomed:
+			return
+	_continue_button.disabled = false
+	_continue_button.show()
 
 
 func update_water_flow() -> void:
