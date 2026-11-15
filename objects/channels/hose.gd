@@ -13,6 +13,7 @@ const DIRECTION_FRAMES: SpriteFrames = preload("res://objects/channels/hose_fram
 @onready var sfx: AudioStreamPlayer2D = $SFX
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var tutorial_done = false
 
 func _ready() -> void:
 	pressure_label.text = str(distance - 1)
@@ -21,7 +22,13 @@ func _ready() -> void:
 
 
 func interact() -> void:
+	if tutorial_done == true:
+		adjust_pressure()
+		return
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/level1.dialogue"), "interact_hose")
+	await DialogueManager.dialogue_ended
 	adjust_pressure()
+	tutorial_done = true
 
 
 func get_targets() -> Array[Vector2i]:

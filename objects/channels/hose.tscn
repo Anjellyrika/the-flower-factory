@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhyeiwu0a8qd3"]
 
 [ext_resource type="Script" uid="uid://bpi3owfmps8ts" path="res://objects/channels/hose.gd" id="1_wwfbs"]
-[ext_resource type="SpriteFrames" path="res://objects/channels/hose_frames.tres" id="2_pi4ry"]
+[ext_resource type="SpriteFrames" uid="uid://c62fyids05uml" path="res://objects/channels/hose_frames.tres" id="2_pi4ry"]
 [ext_resource type="PackedScene" uid="uid://6d207b11a6c7" path="res://objects/interaction_area.tscn" id="3_interaction"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pi4ry"]
@@ -25,4 +25,4 @@ offset_bottom = 33.0
 text = "null"
 label_settings = SubResource("LabelSettings_pi4ry")
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1435365212]

@@ -8,6 +8,7 @@ const DIRECTION_FRAMES: SpriteFrames = preload("res://objects/channels/wheelbarr
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sfx_player: AudioStreamPlayer2D = $SFX
 
+var tutorial_done = false
 
 func _ready() -> void:
 	sprite.sprite_frames = DIRECTION_FRAMES
@@ -15,8 +16,15 @@ func _ready() -> void:
 
 
 func interact() -> void:
+	if tutorial_done == true:
+		rotate_clockwise()
+		sfx_player.play()
+		return
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/level1.dialogue"), "interact_wheelbarrow")
+	await DialogueManager.dialogue_ended
 	rotate_clockwise()
 	sfx_player.play()
+	tutorial_done = true
 
 
 func rotate_clockwise() -> void:
