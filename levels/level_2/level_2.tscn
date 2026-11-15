@@ -89,4 +89,5 @@ disabled = true
 text = "You watered the flowers!
 Click to Continue."
 
+[connection signal="bonus_unlocked" from="Objects/Cardboard" to="." method="_on_cardboard_bonus_unlocked"]
 [connection signal="pressed" from="WaterSystem/Continue" to="." method="_on_continue_pressed"]

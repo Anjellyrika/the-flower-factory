@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b5so716xesyfw"]
+
+[ext_resource type="Script" uid="uid://cvpwj8vsnhm1d" path="res://entity/cat.gd" id="1_ihc2s"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_3i3u3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y00b8"]
+size = Vector2(64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmglj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3i3u3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cat" type="StaticBody2D" unique_id=13180464]
+script = ExtResource("1_ihc2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551958849]
+shape = SubResource("RectangleShape2D_y00b8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1546522031]
+modulate = Color(1, 0.4862745, 0.3019608, 1)
+position = Vector2(9.536743e-07, 0)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_dmglj")
