@@ -24,18 +24,22 @@ func _ready() -> void:
 			_flowers.append(object)
 			object.bloomed.connect(_on_flower_bloomed)
 		if object is Channel: # Record channel locations
-			object.cell = objects_layer.local_to_map(objects_layer.to_local(object.global_position))
-			channels[object.cell] = object
-			object.changed.connect(update_water_flow)
-			object.flow_ready.connect(update_water_flow)
-			if object is WaterSource:
-				_water_sources.append(object)
-				object.set_watered(true)
+			register_channel(object)
 	_splash_parent = Node2D.new()
 	_splash_parent.name = "Splashes"
 	objects_layer.add_child(_splash_parent)
 	update_water_flow()
 	_on_flower_bloomed()
+
+
+func register_channel(channel: Channel) -> void:
+	channel.cell = objects_layer.local_to_map(objects_layer.to_local(channel.global_position))
+	channels[channel.cell] = channel
+	channel.changed.connect(update_water_flow)
+	channel.flow_ready.connect(update_water_flow)
+	if channel is WaterSource:
+		_water_sources.append(channel)
+		channel.set_watered(true)
 
 
 func _on_flower_bloomed() -> void:
