@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/dreaming of a better tomorrow.mp3-adf16766fc0
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
