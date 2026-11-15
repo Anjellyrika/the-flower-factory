@@ -32,7 +32,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAQABAAAAAQAAAAAAAQABAAEAAQAAAAA
 tile_set = SubResource("TileSet_8r3qo")
 
 [node name="Objects" type="TileMapLayer" parent="." unique_id=331230404]
-tile_map_data = PackedByteArray("AAAAAAgAAQAAAAAAAQABAAgAAAAAAAAAAgAEAAgAAAAAAAAABAAGAAgAAAAAAAAABAAEAAcAAwAAAAAAAQAGAAQAAwAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAAAAgAAQAAAAAAAQABAAgAAAAAAAAAAgAEAAgAAAAAAAAABAAGAAgAAAAAAAAABAAEAAQAAwAAAAAAAQAGAAcAAwAAAAAAAQA=")
 tile_set = ExtResource("4_8y2in")
 
 [node name="Hose1" parent="Objects" unique_id=939167185 instance=ExtResource("5_ubkp0")]
@@ -40,11 +40,11 @@ position = Vector2(160, 544)
 distance = 3
 
 [node name="Wheelbarrow" parent="Objects" unique_id=924564302 instance=ExtResource("6_un0ug")]
-position = Vector2(416, 480)
+position = Vector2(288, 480)
 rotation = -1.5707964
 
 [node name="Hose2" parent="Objects" unique_id=682465049 instance=ExtResource("5_ubkp0")]
-position = Vector2(416, 416)
+position = Vector2(288, 416)
 rotation = -1.5707964
 
 [node name="MapBoundary" type="StaticBody2D" parent="." unique_id=1430419111]
